@@ -1,0 +1,29 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+
+<% for(let post of allPosts) { %>
+  <div class="">
+    <div class="">
+      <h3> <%= post.title %> </h3>
+      <h5> <%= post.content.substring(0,100) + "..." %> <span> <a href='/posts/<%=post._id%>' ><div class="w3-btn w3-ripple">Read more</div></a></span> </h5>
+    </div>
+  </div>
+<% } %>
+
+<!-- compose button -->
+<div class="w3-container w3-center">
+  <div class="w3-container w3-bottom" style="height: 135px; width:85%;">
+    <div class="w3-display-topright">
+      <div class="w3-margin">
+        <a href="/compose">
+          <div class="w3-btn w3-ripple w3-border w3-round w3-light-grey" style="border-radius:50px;">
+            <p class="w3-large" style="color:#1abc9c">compose</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer") -%>
